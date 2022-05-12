@@ -48,3 +48,9 @@
 @import url(./blocks/popup/__figure/popup__figure.css);
 @import url(./blocks/popup/__figcaption/popup__figcaption.css);
 @import url(./blocks/popup/__image/popup__image.css);
+@import url(blocks/auth/auth.css);
+@import url(blocks/auth/__form/auth__form.css);
+@import url(blocks/auth/__title/auth__title.css);
+@import url(blocks/auth/__fieldset/auth__fieldset.css);
+@import url(blocks/auth/__input/auth__input.css);
+@import url(blocks/auth/__link/auth__link.css);

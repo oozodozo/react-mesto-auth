@@ -7,11 +7,14 @@
   padding-bottom: 41px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 917px) {
   .header {
-    padding-left: 27px;
+    padding-left: 30px;
     padding-bottom: 31.6px;
+    padding-right: 30px;
   }  
 }

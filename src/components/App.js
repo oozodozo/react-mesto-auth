@@ -11,6 +11,8 @@ import AddPlacePopup from "./AddPlacePopup";
 import DeletePlacePopup from "./DeletePlacePopup";
 import {Switch, Route} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
+import Login from "./Login";
+import Register from "./Register";
 
 const App = () => {
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
@@ -172,10 +174,10 @@ const App = () => {
                         onCardDelete={handleDeletePlaceClick}
                     />
                     <Route path='/sing-up'>
-
+                        <Register />
                     </Route>
                     <Route path='/sing-in'>
-
+                        <Login />
                     </Route>
                 </Switch>
                 <Footer />
