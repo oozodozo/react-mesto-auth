@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -9,6 +9,8 @@ import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
 import DeletePlacePopup from "./DeletePlacePopup";
+import {Switch, Route} from "react-router-dom";
+import ProtectedRoute from "./ProtectedRoute";
 
 const App = () => {
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
@@ -20,6 +22,8 @@ const App = () => {
     const [renderLoad, setRenderLoad] = React.useState(false);
     const [isDeletePlacePopup, setIsDeletePlacePopup] = React.useState(false);
     const [deletedPlace, setDeletedPlace] = React.useState({});
+
+    const [loggedIn, setLoggedIn] = useState(false);
 
     React.useEffect(() => {
         api.getCards()
@@ -154,15 +158,26 @@ const App = () => {
         <CurrentUserContext.Provider value={currentUser}>
             <div className="page">
                 <Header />
-                <Main
-                    onEditProfile={handleEditProfileClick}
-                    onAddPlace={handleAddPlaceClick}
-                    onEditAvatar={handleEditAvatarClick}
-                    onCardClick={handleCardClick}
-                    cards={cards}
-                    onCardLike={handleCardLike}
-                    onCardDelete={handleDeletePlaceClick}
-                />
+                <Switch>
+                    <ProtectedRoute
+                        exact path='/'
+                        loggedIn={loggedIn}
+                        component={Main}
+                        onEditProfile={handleEditProfileClick}
+                        onAddPlace={handleAddPlaceClick}
+                        onEditAvatar={handleEditAvatarClick}
+                        onCardClick={handleCardClick}
+                        cards={cards}
+                        onCardLike={handleCardLike}
+                        onCardDelete={handleDeletePlaceClick}
+                    />
+                    <Route path='/sing-up'>
+
+                    </Route>
+                    <Route path='/sing-in'>
+
+                    </Route>
+                </Switch>
                 <Footer />
                 <EditProfilePopup
                     isOpen={isEditProfilePopupOpen}
