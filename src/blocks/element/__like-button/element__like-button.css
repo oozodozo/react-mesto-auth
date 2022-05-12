@@ -1,0 +1,21 @@
+.element__like-button {
+  background-image: url(../../../images/heart_disabled.svg);
+  background-size: cover;
+  background-color: transparent;
+  width: 22px;
+  height: 19px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+
+.element__like-button:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+
