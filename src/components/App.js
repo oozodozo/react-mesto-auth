@@ -162,7 +162,9 @@ const App = () => {
     return (
         <CurrentUserContext.Provider value={currentUser}>
             <div className="page">
-                <Header />
+                <Header
+                    loggedIn={false}
+                />
                 <Switch>
                     <ProtectedRoute
                         exact path='/'
@@ -214,9 +216,9 @@ const App = () => {
                     renderLoad={renderLoad}
                 />
                 <InfoTooltip
-                    isOpen={}
-                    title={}
-                    img={}
+                    isOpen={false}
+                    title={'dscsdv'}
+                    img={'dsvsdv'}
                     onClose={closeAllPopups}
                 />
             </div>
