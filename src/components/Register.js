@@ -5,7 +5,7 @@ const Register = () => {
     return (
         <AuthPage title='Регистрация'
                   buttonText='Зарегистрироваться'
-                  formName='sing-up'
+                  formName='sign-up'
         >
             <input name="email"
                    type="email"

@@ -18,7 +18,7 @@ const AuthPage = ({children, title, buttonText, formName}) => {
                     {buttonText}
                 </button>
                 {
-                    formName === 'sing-up' && <Link className='auth__link' to='/sing-in'>Уже зарегистрированы? Войти</Link>
+                    formName === 'sign-up' && <Link className='auth__link page__button' to='/sing-in'>Уже зарегистрированы? Войти</Link>
                 }
             </form>
         </div>

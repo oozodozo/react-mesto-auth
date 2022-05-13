@@ -5,7 +5,7 @@ const Login = () => {
     return (
         <AuthPage title='Вход'
                   buttonText='Войти'
-                  formName='sing-in'
+                  formName='sign-in'
         >
                 <input name="email"
                        type="email"

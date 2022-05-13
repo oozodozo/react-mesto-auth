@@ -9,9 +9,9 @@ const Header = () => {
         <header className="header">
             <img className="header__logo" src={logo} alt="Логотип Место" />
             {
-                location.pathname === '/sing-in' ?
-                    <Link className='header__link' to='/sing-up'>Регистрация</Link> :
-                    <Link className='header__link' to='/sing-in'>Войти</Link>
+                location.pathname === '/sign-in' ?
+                    <Link className='header__link page__button' to='/sign-up'>Регистрация</Link> :
+                    <Link className='header__link page__button' to='/sign-in'>Войти</Link>
             }
         </header>
     );

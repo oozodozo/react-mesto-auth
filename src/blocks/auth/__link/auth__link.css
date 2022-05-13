@@ -1,0 +1,16 @@
+.auth__link {
+    color: #ffffff;
+    text-decoration: none;font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    width: max-content;
+    align-self: center;
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 917px) {
+    .auth__link {
+        margin-top: 15px;
+    }
+}

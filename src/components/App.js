@@ -13,6 +13,9 @@ import {Switch, Route} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import Login from "./Login";
 import Register from "./Register";
+import InfoTooltip from "./InfoTooltip";
+import tooltipImgOk from "../images/tooltip_icon_ok.svg"
+import tooltipImgErr from "../images/tooltip_icon_err.svg"
 
 const App = () => {
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
@@ -173,10 +176,10 @@ const App = () => {
                         onCardLike={handleCardLike}
                         onCardDelete={handleDeletePlaceClick}
                     />
-                    <Route path='/sing-up'>
+                    <Route path='/sign-up'>
                         <Register />
                     </Route>
-                    <Route path='/sing-in'>
+                    <Route path='/sign-in'>
                         <Login />
                     </Route>
                 </Switch>
@@ -209,6 +212,12 @@ const App = () => {
                     onClose={closeAllPopups}
                     onUpdateAvatar={handleUpdateAvatar}
                     renderLoad={renderLoad}
+                />
+                <InfoTooltip
+                    isOpen={}
+                    title={}
+                    img={}
+                    onClose={closeAllPopups}
                 />
             </div>
         </CurrentUserContext.Provider>
