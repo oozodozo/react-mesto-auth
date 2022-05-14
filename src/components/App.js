@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Header from "./Header.js";
 import Main from "./Main.js";
 import Footer from "./Footer.js";
@@ -21,25 +21,25 @@ import * as auth from "../utils/auth.js"
 const App = () => {
     const history = useHistory();
 
-    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
-    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-    const [selectedCard, setSelectedCard] = React.useState(null);
-    const [currentUser, setCurrentUser] = React.useState({});
-    const [cards, setCards] = React.useState([]);
-    const [renderLoad, setRenderLoad] = React.useState(false);
-    const [isDeletePlacePopup, setIsDeletePlacePopup] = React.useState(false);
-    const [deletedPlace, setDeletedPlace] = React.useState({});
+    const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+    const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+    const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+    const [selectedCard, setSelectedCard] = useState(null);
+    const [currentUser, setCurrentUser] = useState({});
+    const [cards, setCards] = useState([]);
+    const [renderLoad, setRenderLoad] = useState(false);
+    const [isDeletePlacePopup, setIsDeletePlacePopup] = useState(false);
+    const [deletedPlace, setDeletedPlace] = useState({});
     const [loggedIn, setLoggedIn] = useState(false);
     const [email, setEmail] = useState('');
     const [isInfoTooltipOpen, setIsInfoTooltipOpen] = useState(false);
     const [tooltipData, setTooltipData] = useState({img: '', title: ''});
 
-    React.useEffect(() => {
+    useEffect(() => {
         checkToken();
     }, []);
 
-    React.useEffect(() => {
+    useEffect(() => {
         api.getCards()
             .then((cardsData) => {
                 setCards(cardsData)
@@ -49,7 +49,7 @@ const App = () => {
             })
     }, []);
 
-    React.useEffect(() => {
+    useEffect(() => {
         api.getUserInfo()
             .then((userData) => {
                 setCurrentUser(userData);
