@@ -2,7 +2,7 @@ import React from 'react';
 import logo from "../images/logo.svg";
 import {Link, useLocation} from "react-router-dom";
 
-const Header = ({loggedIn}) => {
+const Header = ({loggedIn, email, onSignOut}) => {
     const location = useLocation()
 
     return (
@@ -11,8 +11,13 @@ const Header = ({loggedIn}) => {
             {
                 loggedIn ?
                     <div className='header__user-info'>
-                        <p className='header__email'>{'email@yandex.ru'}</p>
-                        <Link className='header__link header__link_active page__button' to='/sign-in'>Выйти</Link>
+                        <p className='header__email'>{email}</p>
+                        <Link className='header__link header__link_active page__button'
+                              to='/sign-in'
+                              onClick={onSignOut}
+                        >
+                            Выйти
+                        </Link>
                     </div> :
                     (<>
                         {

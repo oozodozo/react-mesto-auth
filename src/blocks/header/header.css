@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  width: 100vw;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   padding-bottom: 41px;
   -webkit-box-sizing: border-box;
@@ -18,3 +18,12 @@
     padding-right: 30px;
   }  
 }
+
+@media screen and (max-width: 517px) {
+  .header {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+}
+
+

@@ -5,9 +5,12 @@
     align-items: center;
 }
 
-@media screen and (max-width: 917px) {
+@media screen and (max-width: 517px) {
     .header__user-info {
+        width: 100vw;
         flex-direction: column;
         gap: 18px;
+        padding: 40px 0;
+        border-bottom: 1px solid rgba(84, 84, 84, 0.7);
     }
 }
