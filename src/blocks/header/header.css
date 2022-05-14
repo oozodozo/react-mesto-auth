@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100vw;
+  width: 100%;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   padding-bottom: 41px;
   -webkit-box-sizing: border-box;
