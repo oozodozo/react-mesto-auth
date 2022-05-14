@@ -50,11 +50,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
   ---
 
-## Ссылка на сайт:
-
-[![Логотип проекта](./src/images/logo.svg)](https://oozodozo.github.io/react-mesto-auth/)
-
-
 ---
 
 По всем вопросам можно написать мне на почту:
