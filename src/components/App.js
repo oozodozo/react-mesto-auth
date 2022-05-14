@@ -40,24 +40,24 @@ const App = () => {
     }, []);
 
     useEffect(() => {
-        api.getCards()
-            .then((cardsData) => {
-                setCards(cardsData)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }, []);
+        if (loggedIn) {
+            api.getCards()
+                .then((cardsData) => {
+                    setCards(cardsData)
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
 
-    useEffect(() => {
-        api.getUserInfo()
-            .then((userData) => {
-                setCurrentUser(userData);
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }, []);
+            api.getUserInfo()
+                .then((userData) => {
+                    setCurrentUser(userData);
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+    }, [loggedIn]);
 
     function handleEditProfileClick() {
         setIsEditProfilePopupOpen(true);
