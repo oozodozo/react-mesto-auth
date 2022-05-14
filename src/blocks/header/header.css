@@ -9,6 +9,7 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: 917px) {
@@ -17,13 +18,6 @@
     padding-bottom: 31.6px;
     padding-right: 30px;
   }  
-}
-
-@media screen and (max-width: 618px) {
-  .header {
-    flex-direction: column-reverse;
-    gap: 20px;
-  }
 }
 
 
