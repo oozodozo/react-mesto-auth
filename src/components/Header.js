@@ -1,9 +1,8 @@
 import React from 'react';
 import logo from "../images/logo.svg";
-import {Link, useLocation} from "react-router-dom";
+import {Link, Route} from "react-router-dom";
 
 const Header = ({loggedIn, email, onSignOut}) => {
-    const location = useLocation()
 
     return (
         <header className="header">
@@ -20,11 +19,12 @@ const Header = ({loggedIn, email, onSignOut}) => {
                         </Link>
                     </div> :
                     (<>
-                        {
-                        location.pathname === '/sign-in' ?
-                            <Link className='header__link page__button' to='/sign-up'>Регистрация</Link> :
+                        <Route path='/sign-up'>
                             <Link className='header__link page__button' to='/sign-in'>Войти</Link>
-                        }
+                        </Route>
+                        <Route path='/sign-in'>
+                            <Link className='header__link page__button' to='/sign-up'>Регистрация</Link>
+                        </Route>
                     </>)
             }
         </header>
