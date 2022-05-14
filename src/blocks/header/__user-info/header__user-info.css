@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-@media screen and (max-width: 517px) {
+@media screen and (max-width: 618px) {
     .header__user-info {
         width: 100vw;
         flex-direction: column;
