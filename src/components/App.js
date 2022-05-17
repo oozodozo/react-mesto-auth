@@ -9,7 +9,7 @@ import EditProfilePopup from "./EditProfilePopup.js";
 import EditAvatarPopup from "./EditAvatarPopup.js";
 import AddPlacePopup from "./AddPlacePopup.js";
 import DeletePlacePopup from "./DeletePlacePopup.js";
-import {Switch, Route, useHistory} from "react-router-dom";
+import {Switch, Route, useHistory, Redirect} from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute.js";
 import Login from "./Login.js";
 import Register from "./Register.js";
@@ -20,7 +20,6 @@ import * as auth from "../utils/auth.js"
 
 const App = () => {
     const history = useHistory();
-
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
     const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
     const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
@@ -41,16 +40,9 @@ const App = () => {
 
     useEffect(() => {
         if (loggedIn) {
-            api.getCards()
-                .then((cardsData) => {
-                    setCards(cardsData)
-                })
-                .catch((err) => {
-                    console.log(err)
-                })
-
-            api.getUserInfo()
-                .then((userData) => {
+            Promise.all([api.getCards(), api.getUserInfo()])
+                .then(([cardsData, userData]) => {
+                    setCards(cardsData);
                     setCurrentUser(userData);
                 })
                 .catch((err) => {
@@ -246,6 +238,9 @@ const App = () => {
                         <Login
                             onLogin={handleLogin}
                         />
+                    </Route>
+                    <Route path='*'>
+                        {loggedIn ? <Redirect to="/" /> : <Redirect to="/sign-in" />}
                     </Route>
                 </Switch>
                 <Footer />
